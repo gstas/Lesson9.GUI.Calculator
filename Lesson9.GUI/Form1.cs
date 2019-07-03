@@ -119,32 +119,24 @@ namespace Lesson9.GUI
 
         private void BtnSqrt_Click(object sender, EventArgs e)
         {
-            calculator.Number1 = Convert.ToDouble(display.Text);
-            calculator.OperationCode = 5;
-            calculator.Calculate();
-            display.Text = calculator.Result;
+            calculator.CalculateExtended(5, ref display);
         }
 
         private void BtnX2_Click(object sender, EventArgs e)
         {
-            calculator.Number1 = Convert.ToDouble(display.Text);
-            calculator.OperationCode = 6;
-            calculator.Calculate();
-            display.Text = calculator.Result;
+            calculator.CalculateExtended(6, ref display);
         }
 
         private void Btn1divX_Click(object sender, EventArgs e)
         {
-            calculator.Number1 = Convert.ToDouble(display.Text);
-            calculator.OperationCode = 7;
-            calculator.Calculate();
-            display.Text = calculator.Result;
+            calculator.CalculateExtended(7, ref display);
         }
 
         private void BtnPercent_Click(object sender, EventArgs e)
         {
-            double number = Convert.ToDouble(display.Text);
-            display.Text = calculator.GetPercent(number);
+            calculator.Number2 = Convert.ToDouble(display.Text);
+            //double number = Convert.ToDouble(display.Text);
+            display.Text = calculator.GetPercent();
         }
     }
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Lesson9.GUI
 {
@@ -27,7 +28,7 @@ namespace Lesson9.GUI
                     result = (number1 + number2).ToString();
                     break;
                 case 2:
-                    result = (number1 - number2) + "";
+                    result = (number1 - number2).ToString();
                     break;
                 case 3:
                     result = (number1 * number2).ToString();
@@ -50,17 +51,23 @@ namespace Lesson9.GUI
 
         }
 
-        public string GetPercent(double n2)
+        public void CalculateExtended(int op, ref TextBox display) {
+            Number1 = Convert.ToDouble(display.Text);
+            OperationCode = op;
+            Calculate();
+            display.Text = Result;
+        }
+
+        public string GetPercent()
         {
             switch (this.operationCode)
             {
                 case 1:
                 case 2:
-                    return (n2 * number1 / 100).ToString();
+                    return (number2 * number1 / 100).ToString();
                 case 3:
-                    return (n2 / 100).ToString();
                 case 4:
-                    return "Division by %";
+                    return (number2 / 100).ToString();
                 default:
                     return "Unknown operation %";
             }
