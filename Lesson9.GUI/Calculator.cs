@@ -51,11 +51,11 @@ namespace Lesson9.GUI
 
         }
 
-        public void CalculateExtended(int op, ref TextBox display) {
-            Number1 = Convert.ToDouble(display.Text);
+        public string CalculateExtended(int op, string displayText) {
+            Number1 = Convert.ToDouble(displayText);
             OperationCode = op;
             Calculate();
-            display.Text = Result;
+            return Result;
         }
 
         public string GetPercent()

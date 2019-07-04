@@ -119,17 +119,17 @@ namespace Lesson9.GUI
 
         private void BtnSqrt_Click(object sender, EventArgs e)
         {
-            calculator.CalculateExtended(5, ref display);
+            display.Text = calculator.CalculateExtended(5, display.Text);
         }
 
         private void BtnX2_Click(object sender, EventArgs e)
         {
-            calculator.CalculateExtended(6, ref display);
+            display.Text = calculator.CalculateExtended(6, display.Text);
         }
 
         private void Btn1divX_Click(object sender, EventArgs e)
         {
-            calculator.CalculateExtended(7, ref display);
+            display.Text = calculator.CalculateExtended(7, display.Text);
         }
 
         private void BtnPercent_Click(object sender, EventArgs e)
